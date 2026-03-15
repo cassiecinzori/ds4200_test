@@ -133,6 +133,12 @@
             margin: 1.5rem 0;
         }
 
+        .visualization iframe {
+            width: 100%;
+            border: 1px solid #dee2e6;
+            margin: 1.5rem 0;
+        }
+
         .visualization p {
             color: #495057;
             font-size: 1rem;
@@ -172,19 +178,6 @@
         .references a:hover {
             color: #000;
             border-bottom: 1px solid #000;
-        }
-
-        .interactive-note {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            padding: 1.2rem;
-            margin: 1rem 0;
-            font-size: 0.95rem;
-            color: #495057;
-        }
-
-        .interactive-note strong {
-            color: #2c3e50;
         }
 
         footer {
@@ -281,8 +274,8 @@
             </p>
             <p>
                 The 11% reduction in filtered requests over the decade, despite population growth, merits consideration as a potential 
-                finding rather than a data quality concern. This trend may reflect improved municipal responsiveness reducing repeat 
-                complaints, evolving civic engagement patterns, or migration toward alternative digital reporting channels.
+                finding rather than a data quality concern. This trend may reflect improved municipal service delivery efficiency reducing 
+                duplicate complaints, evolving civic engagement patterns, or migration toward alternative digital reporting channels.
             </p>
 
             <h3>Supplementary Data</h3>
@@ -373,21 +366,30 @@
             </div>
 
             <div class="visualization">
-                <h3>Figure 5: Interactive Geographic Visualization</h3>
-                <div class="interactive-note">
-                    <strong>Interactive Component:</strong> Side-by-side choropleth maps enable spatial comparison of 2015 and 2025 request 
-                    distributions with dynamic filtering by neighborhood and request type. Implementation utilizes Dash and Folium frameworks 
-                    with marker clustering for performance optimization.
-                </div>
-                <p>Execute <code>map_app.py</code> to access the interactive visualization interface.</p>
+                <h3>Figure 5: Interactive Neighborhood Request Pattern Comparison</h3>
+                <iframe src="interactive_neighborhood_comparison.html" 
+                        width="100%" 
+                        height="750" 
+                        frameborder="0"
+                        style="border: 1px solid #dee2e6;">
+                </iframe>
+                <p>
+                    This interactive visualization allows exploration of request patterns for individual neighborhoods. 
+                    Use the dropdown to select any Boston neighborhood and click the legend to toggle between 2015 
+                    and 2025 data. Request types are displayed alphabetically with grouped bars showing year-over-year comparison.
+                    This Altair-based visualization enables detailed examination of how specific neighborhoods' complaint profiles 
+                    evolved over the study period.
+                </p>
             </div>
 
             <div class="visualization">
-                <h3>Figure 6: Cluster Transition Analysis</h3>
-                <div class="interactive-note">
-                    <strong>Interactive Component:</strong> Altair-based scatter plot visualization documents neighborhood transitions 
-                    between cluster assignments from 2015 to 2025. Interactive tooltips provide detailed neighborhood-level metadata on hover.
-                </div>
+                <h3>Figure 6: Interactive Geographic Visualization</h3>
+                <p>
+                    <strong>Interactive Component:</strong> Side-by-side choropleth maps enable spatial comparison of 2015 and 2025 request 
+                    distributions with dynamic filtering by neighborhood and request type. Implementation utilizes Dash and Folium frameworks 
+                    with marker clustering for performance optimization.
+                </p>
+                <p>Execute <code>map_app.py</code> to access the interactive visualization interface.</p>
             </div>
         </section>
 
